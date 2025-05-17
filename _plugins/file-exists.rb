@@ -14,7 +14,8 @@ module Jekyll
       file_path = site_source + '/' + url
 
       # Check if file exists (returns true or false)
-      "#{File.exist?(file_path.strip!)}"
+      # use `strip` instead of `strip!` to avoid returning `nil`
+      "#{File.exist?(file_path.strip)}"
     end
   end
 end
